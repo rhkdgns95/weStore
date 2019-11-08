@@ -3,7 +3,7 @@
 
 ## Todo
 - [x] Creating a NextJS App.
-
+- [x] Links and Navigation.
 
 ## Install
 1. yarn add react react-dom next
@@ -71,3 +71,6 @@
 > > 1. 우리가 웹사이트를 갈때마다 react.js app을 가져오고 백엔드에 렌더링이된다.
 > > 2. 그리고 모든 변환된 HTML이 복사되어, 프론트로 전달이된다.
 > > 3. 이것이 Server Side Rendering이 react에서 동작하는 것이다. (코드가 서버에 렌더링이 된후 -> 이코드를 복사해서 HTML이 client에 보내지는것이다. )
+
+### react.js의 state
+> Javascript 측에 있다. 그러나 우리가 보기에는 html안에서 react.js코드로 보인다. => 아주 쿨한것 (SEO 최적화!)
