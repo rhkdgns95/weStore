@@ -4,7 +4,7 @@
 ## Todo
 - [x] Creating a NextJS App.
 - [x] Links and Navigation.
-
+- [x] Shared Components.
 ## Install
 1. yarn add react react-dom next
 
