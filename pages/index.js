@@ -1,14 +1,12 @@
 import Head from "next/head";
-import Link from "next/link";
-import withLayout from "../lib/withLayout";
 import PostLink from "../components/PostLink";
 
-const Index = () => (
+export default () => (
     <div>
         <Head>
             <title>Home | weStore</title>
         </Head>
-        <h1>Hello world</h1>
+        <h1>Movies: </h1>
         {/* 
             a에 href속성이아닌, Link에 거는이유는?
             Link가 a태그를 가지면, Link의 href을 넣어줄수있다.
@@ -17,21 +15,11 @@ const Index = () => (
         */}
         <ul>
             <li>
-                <PostLink title={"Something"}/>
+                <PostLink title={"Something"} id={0}/>
             </li>
             <li>
-                <PostLink title={"Something else"}/>
+                <PostLink title={"Something else"} id={1}/>
             </li>
         </ul>
-        <style jsx global>
-        {`
-            html, body {
-                margin: 0;
-                padding: 0;
-            }
-        `}
-        </style>
     </div>
 );
-
-export default withLayout(Index);
