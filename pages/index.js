@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import withLayout from "../lib/withLayout";
+import PostLink from "../components/PostLink";
 
 const Index = () => (
     <div>
@@ -14,9 +15,15 @@ const Index = () => (
             더 중요한점은 여기서 이 페이지에서 About페이지의 소스코드를 확인할수 있다는 점이다.
             즉, SEO에 더 최적화 되어있다.
         */}
-        <Link href={"/about"}>
-            <a>About Page</a>
-        </Link>
+        <ul>
+            <li>
+                <PostLink title={"Very Important"}/>
+            </li>
+            <li>
+                <PostLink title={"Super Old"}/>
+            </li>
+        </ul>
+        
     </div>
 );
 

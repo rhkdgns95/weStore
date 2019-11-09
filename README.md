@@ -5,6 +5,7 @@
 - [x] Creating a NextJS App.
 - [x] Links and Navigation.
 - [x] Shared Components.
+
 ## Install
 1. yarn add react react-dom next
 
@@ -13,7 +14,11 @@
 > 기본적으로 root디렉터리 아래에는 pages디렉터리가 필요하다.
 
 
-## TIP
+## Using
+> Router - withRouter
+> * NextJS에서 사용하는 HOC용 라우터로써 props를 전달해주기 위해서 사용된다.
+> * 우리의 프로젝트 PostLink에서 Router를 만들어주었음.
+
 
 ### CRA
 > 기본적인 CRA를 사용하게되면 우리는 기본적으로 react app을 생성한다. (이것은 우리가 아무것도 하지 않아도 된다는것을 의미한다.)
