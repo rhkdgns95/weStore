@@ -23,7 +23,14 @@ const Index = () => (
                 <PostLink title={"Something else"}/>
             </li>
         </ul>
-        
+        <style jsx global>
+        {`
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+        `}
+        </style>
     </div>
 );
 

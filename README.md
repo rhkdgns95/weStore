@@ -8,6 +8,8 @@
 - [x] Dynamic Pages.
 - [x] Pretty URLS part 1.
 - [x] Pretty URLS part 2.
+- [x] Styles on NextJS.
+
 
 ## Install
 1. yarn add react react-dom next
@@ -47,6 +49,35 @@
 - style
 > * NextJS에서는 styled-component를 직접적으로 사용할 수 가 없다.
 > * NextJS에서는 다른것을 갖고 있다.
+> * NextJS에서의 style은 이해하기 쉽다. 
+> * NextJS는 style을 모듈처럼 가지고있다.
+
+- style 사용
+> * 예제
+<styles jsx>{`
+    ul { 
+        display: flex; 
+        background-color: red;
+    }
+    ul li {
+        margin-right: 10px;
+    }
+`}</styles>
+> * 위 예제를 보면 이제는 Nextjs를 스타일하면서 클래스명을 고민할 필요가 없다.
+
+- Global Style 사용
+> * 예제
+<style jsx global>
+{`
+    html, body {
+        padding: 0;
+        margin: 0;
+    }
+`}
+</style>
+> * 위 예제처럼 jsx, global을 추가해서 글로벌 스타일을 지정할수있다.
+
+
 
 ### CRA
 > 기본적인 CRA를 사용하게되면 우리는 기본적으로 react app을 생성한다. (이것은 우리가 아무것도 하지 않아도 된다는것을 의미한다.)
