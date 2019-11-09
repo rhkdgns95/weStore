@@ -9,7 +9,8 @@
 - [x] Pretty URLS part 1.
 - [x] Pretty URLS part 2.
 - [x] Styles on NextJS.
-
+- [x] Custom App.
+- [x] Custom Documents and Static Files.
 
 ## Install
 1. yarn add react react-dom next
@@ -81,6 +82,24 @@
 > * nextJS에서는 자동으로 _app.js component를 사용해서 모든 어플리케이션을 실행시켜준다. => 이말은 이제 withLayout을 사용할 필요가 없다는 것이다.
 > * 이떄 Container태그도 함께사용되었으나 현재는 Deprecated.
 > * 모든 페이지에서 보여주고싶은 데이터가 있을때 유용하며, 공통의 스타일작업을 하기에도편리할것같다.
+
+- _document.js
+> * Document가 서버에서 통채로 render되지 않도록 만들기.
+> * 여기서는 <html> <head></head></html> 와같이 head와 body를 작성할수있으며, head 부분에서 link태그를 통해 스타일을 가져오는 작업도 가능하다. 바로 /public에 넣으면 된다.
+
+- /static  !deprecated. => /public으로 
+> * NextJS는 강력한 static file system을 가지고있다.
+> * /static/styles.css 생성이후 _document에서 styles.css를 불러오면된다.
+> * /static은 deprecated. => /public으로 대체됨.
+
+- /public
+> * 경로는 /public/styles.css 가 아닌, /styles.css로 사용하도록한다.
+> * link에 rel={"stylesheet"} 작성해야 적용됨!
+> * NextJS가 자동으로 /public 파일을 관리해준다.
+> * 이미지 파일도 넣을 수 있다. 
+
+- _app.js와 _document.js
+> * 이 두개는 가장 비슷한데, 약간의 차이점이있다면, _app.js는 body안에 즉 공통의 컴포넌트의 데이터를 제어하는데 유용하며, _document는 /public과 같이 정적인 파일 혹은 이미지 파일들을 가져올 수 있으며 스타일 적용하는것 + html태그 전체에 관여할수있으므로 잘맞춰서 사용할 수 있도록 한다.
 
 
 ### CRA
