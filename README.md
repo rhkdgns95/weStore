@@ -7,6 +7,7 @@
 - [x] Shared Components.
 - [x] Dynamic Pages.
 - [x] Pretty URLS part 1.
+- [x] Pretty URLS part 2.
 
 ## Install
 1. yarn add react react-dom next
@@ -41,8 +42,11 @@
 > * Production 서버를 사용하는경우 - yarn dev (node server)
 > * Dev 서버를 사용하는경우 - yarn start (NODE_ENV=production node server.js)
 > * 이것이 nextJS 서버를 migrate한 셈이다.
+> * 이제 express를 사용하는데, express에서 route 처리하는 방법을 통해 URL을 수정해서 보이도록하면 된다.
 
-
+- style
+> * NextJS에서는 styled-component를 직접적으로 사용할 수 가 없다.
+> * NextJS에서는 다른것을 갖고 있다.
 
 ### CRA
 > 기본적인 CRA를 사용하게되면 우리는 기본적으로 react app을 생성한다. (이것은 우리가 아무것도 하지 않아도 된다는것을 의미한다.)
