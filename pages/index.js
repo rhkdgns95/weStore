@@ -17,10 +17,10 @@ const Index = () => (
         */}
         <ul>
             <li>
-                <PostLink title={"Very Important"}/>
+                <PostLink title={"Something"}/>
             </li>
             <li>
-                <PostLink title={"Super Old"}/>
+                <PostLink title={"Something else"}/>
             </li>
         </ul>
         

@@ -5,19 +5,43 @@
 - [x] Creating a NextJS App.
 - [x] Links and Navigation.
 - [x] Shared Components.
+- [x] Dynamic Pages.
+- [x] Pretty URLS part 1.
 
 ## Install
 1. yarn add react react-dom next
-
+2. yarn add express
 
 ## Rule
 > 기본적으로 root디렉터리 아래에는 pages디렉터리가 필요하다.
 
 
 ## Using
-> Router - withRouter
+- Router - withRouter
 > * NextJS에서 사용하는 HOC용 라우터로써 props를 전달해주기 위해서 사용된다.
 > * 우리의 프로젝트 PostLink에서 Router를 만들어주었음.
+
+- Route Masking
+> * Link태그에서 as에 값을 넣어준다.
+> * Route Masking이란 사용자에게 URL을 깔끔하게 보여주는 역할을 한다.
+> * 하지만 해당 페이지에서 다시 새로고침을 해보면, Not Found 404가 뜬다.
+
+- Route Making의 문제점
+> * 여기서의 역할은 client에 직접적으로 route masking을 한것이다. 그래서 Server의 값에 전달을 해주어야하는데, 여기서의 Server가 의미하는 것은 실제 우리가 build하는 서버이며, 작은 것들을 올리는 서버이다. 알아둘게 하나있다.
+> * NextJS는 framework 종류의 Front-end로 혼자 이루어지지 않는다. 풀스택의 framework로 이루어지며 front-end를 위한 back-end이다.
+
+- Route Making의 해결
+> * 우리만의 작은 NextJS custom server를 만드는 것이다. => server.js
+
+- server.js
+> * 한가지 알아둘점은 Development 서버 Or Production 서버인지 알아두어야한다.
+> * production server는 그렇게 많은 것을 쌓아두지 않는다. => 모든것을 압축해서 가지고있다.
+
+- Production / Dev
+> * Production 서버를 사용하는경우 - yarn dev (node server)
+> * Dev 서버를 사용하는경우 - yarn start (NODE_ENV=production node server.js)
+> * 이것이 nextJS 서버를 migrate한 셈이다.
+
 
 
 ### CRA
