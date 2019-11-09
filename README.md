@@ -11,7 +11,7 @@
 - [x] Styles on NextJS.
 - [x] Custom App.
 - [x] Custom Documents and Static Files.
-
+- [x] getInitialProps.
 ## Install
 1. yarn add react react-dom next
 2. yarn add express
@@ -100,6 +100,16 @@
 
 - _app.js와 _document.js
 > * 이 두개는 가장 비슷한데, 약간의 차이점이있다면, _app.js는 body안에 즉 공통의 컴포넌트의 데이터를 제어하는데 유용하며, _document는 /public과 같이 정적인 파일 혹은 이미지 파일들을 가져올 수 있으며 스타일 적용하는것 + html태그 전체에 관여할수있으므로 잘맞춰서 사용할 수 있도록 한다.
+
+- getInitialProps
+> * NextJS에서만 존재하는 새로운 method이다.
+> * Component가 Render되기전에 불리는 함수이다. => 바로 API를 호출하는 부분이다. 즉, 우리는 getInitialProps에서 data를 받아서 data가 있을때만 Component를 Render하면 된다.
+> * 유저는 Loading중인것을 확인할 필요가 없다.
+> * _document.js와 _app.js에 전역 메소드로 설정해주도록 한다.
+> * 우리는 _document.js와 _app.js를 커스텀하게 사용하므로 설정해주어야 하지만, 그렇지 않은경우는 사용하지 않아도 된다.
+> * getInitailProps는 모든 컴포넌트에서 개별적으로 실행할 수 있는데, 컴포넌트가 render되기전에 getInitialProps()가 먼저 호출된다는 점을 기억하자.!
+> * React에서는 없다.
+
 
 
 ### CRA
