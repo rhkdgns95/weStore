@@ -12,9 +12,14 @@
 - [x] Custom App.
 - [x] Custom Documents and Static Files.
 - [x] getInitialProps.
+- [x] Fetching the movie list and details.
+
 ## Install
 1. yarn add react react-dom next
 2. yarn add express
+3. yarn add axios
+4. yarn add isomorphic fetch
+: backend에서 fetch하는 방식을 사용하기위해서 설치함.
 
 ## Rule
 > 기본적으로 root디렉터리 아래에는 pages디렉터리가 필요하다.
@@ -82,6 +87,7 @@
 > * nextJS에서는 자동으로 _app.js component를 사용해서 모든 어플리케이션을 실행시켜준다. => 이말은 이제 withLayout을 사용할 필요가 없다는 것이다.
 > * 이떄 Container태그도 함께사용되었으나 현재는 Deprecated.
 > * 모든 페이지에서 보여주고싶은 데이터가 있을때 유용하며, 공통의 스타일작업을 하기에도편리할것같다.
+> * NextJS가 모든 페이지를 초기화하는 데 사용한다. 그래서 title값을 바꾸도록 할 수 있다.
 
 - _document.js
 > * Document가 서버에서 통채로 render되지 않도록 만들기.
