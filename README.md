@@ -14,10 +14,14 @@
 - [x] getInitialProps.
 - [x] Fetching the movie list and details.
 
+### Todo - eCommerce
+- [x] Cleaning Up and Planning
+
 ## Install
 1. yarn add react react-dom next
 2. yarn add express
 3. yarn add axios
+: 삭제함.
 4. yarn add isomorphic fetch
 : backend에서 fetch하는 방식을 사용하기위해서 설치함.
 
@@ -177,3 +181,12 @@
 
 ### react.js의 state
 > Javascript 측에 있다. 그러나 우리가 보기에는 html안에서 react.js코드로 보인다. => 아주 쿨한것 (SEO 최적화!)
+
+
+## GraphCMS
+> 심플한 컨텐츠와 backend를 가질 수 있다.
+> graphql을 로드할수도있다.
+> 시장에서는 backend as a server 같은것을 할 수 있는 많은 옵션들이 있다. => 그중 하나가 prismic이라는 것이다.
+> 이것을 언제 사용하는가? => 웹사이트가 있는데, 유저는 아무런 컨텐츠를 만들지 않고 컨텐츠를 받기만 하는 예를들면, blog 같은것을 만들때 사용됨. 
+> 하지만 양방향으로 communication이 있고, 사용자가 인증을 해야하며, 그럴때는 좋은선택이 아니다. => 인증데이터를 생성할수 없으므로 좋지않다.
+> 단순히 Conetent Management System 이다.

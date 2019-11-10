@@ -22,7 +22,6 @@ export default class MyDocument extends Document {
             <html>
                 <Head>
                     <meta name={"author"} content={"KKH"}/>
-                    <link href={"/styles.css"} rel={"stylesheet"}/>
                 </Head>
                 <body>
                     <Main />

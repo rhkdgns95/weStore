@@ -24,10 +24,6 @@ export default class MyApp extends App {
         const { Component, pageProps } = this.props;
         return (
             <div>
-                <Head>
-                    <title>Home | weStore</title>
-                </Head>
-                <Header />
                 <Component { ...pageProps }/>
                 <style jsx global>
                 {`
