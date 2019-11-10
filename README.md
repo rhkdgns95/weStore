@@ -21,6 +21,7 @@
 - [x] Installing Ant Design.
 - [x] Component Recap.
 - [x] Index Queries - useHooks.
+- [x] Rendering Products on Index.
 
 ## Install
 1. yarn add react react-dom next
@@ -137,6 +138,13 @@
 - Ant-design
 > * 우리 앱에서는 3.8.1 버전을 사용하며, 헤더에 넣어주도록 한다.
 > * React ui Framework이며 design할 때 도와준다.
+
+- Query의 alias
+> * 기존 쿼리 products를 새로운 이름의 myProducts로 사용하는 방법.
+myProducts: products {
+    id
+    name
+}
 
 ### CRA
 > 기본적인 CRA를 사용하게되면 우리는 기본적으로 react app을 생성한다. (이것은 우리가 아무것도 하지 않아도 된다는것을 의미한다.)

@@ -18,7 +18,13 @@ app
 .prepare()
 .then(() => {
     const server = express();
-    
+
+    server.get("/product/:id", (req, res) => {
+        const actualPath = "/product";
+        const queryParams = req.params.id;
+        app.render(req, res, actualPath, queryParams);
+    });
+
     server.get("/category/:name", (req, res) => {
         const actualPath = "/category";
         const queryParams = { name: req.params.name };
