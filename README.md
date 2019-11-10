@@ -1,5 +1,6 @@
 # weStore
 > eCommerce PWA Built with NextJS and GraphCMS 
+> 참고 https://github.com/zeit/next.js#custom-app
 
 ## Todo
 - [x] Creating a NextJS App.
@@ -19,6 +20,7 @@
 - [x] Installing Apollo in NextJS.
 - [x] Installing Ant Design.
 - [x] Component Recap.
+- [x] Index Queries - useHooks.
 
 ## Install
 1. yarn add react react-dom next
