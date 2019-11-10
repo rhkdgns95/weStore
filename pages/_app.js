@@ -1,10 +1,9 @@
-import App, { Container } from "next/app";
+import App from "next/app";
 import React from "react";
-import Header from "../components/Header";
-import Head from "next/head";
+import withApollo from "../lib/withApollo";
+import { ApolloProvider } from "react-apollo";
 
-export default class MyApp extends App {
-    
+class MyApp extends App {
     /**
      * 
      *  @param {*} ctx 
@@ -21,19 +20,21 @@ export default class MyApp extends App {
     }
 
     render() {
-        const { Component, pageProps } = this.props;
+        const { Component, pageProps, apollo } = this.props;
         return (
-            <div>
-                <Component { ...pageProps }/>
-                <style jsx global>
-                {`
-                    html, body {
-                        margin: 0;
-                        padding: 0;
-                    }
-                `}
-                </style>
-            </div>
+            <ApolloProvider client={apollo}>
+                <div>
+                    <Component { ...pageProps }/>
+                    <style jsx global>
+                    {`
+                        html, body {
+                            margin: 0;
+                            padding: 0;
+                        }
+                    `}
+                    </style>
+                </div>
+            </ApolloProvider>
         )
         /**
          *  Container Deprecated!
@@ -46,3 +47,5 @@ export default class MyApp extends App {
         // ) 
     }
 };
+
+export default withApollo(MyApp);

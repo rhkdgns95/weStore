@@ -15,7 +15,8 @@
 - [x] Fetching the movie list and details.
 
 ### Todo - eCommerce
-- [x] Cleaning Up and Planning
+- [x] Cleaning Up and Planning.
+- [x] Installing Apollo in NextJS.
 
 ## Install
 1. yarn add react react-dom next
@@ -24,6 +25,7 @@
 : 삭제함.
 4. yarn add isomorphic fetch
 : backend에서 fetch하는 방식을 사용하기위해서 설치함.
+5. yarn add apollo-boost graphql react-apollo next-with-apollo
 
 ## Rule
 > 기본적으로 root디렉터리 아래에는 pages디렉터리가 필요하다.
@@ -120,6 +122,14 @@
 > * getInitailProps는 모든 컴포넌트에서 개별적으로 실행할 수 있는데, 컴포넌트가 render되기전에 getInitialProps()가 먼저 호출된다는 점을 기억하자.!
 > * React에서는 없다.
 
+- GraphCMS
+> * config.js에 API_URL을 작성한다.
+> * HOC방식으로 실행시킨다. 
+> * 먼저, withApollo.js에서 apollo의 client단 작성을한다음 withApollo()로 감싼다. (withApollo로 decorate한다.)
+> * 그리고 _app.js에서 클래스를 withApollo(MyApp);으로 감싸면 HOC방식이 완성된다. => 이렇게 withApollo로 MyApp를 decorate하면 MyApp의 props에서는 client를 받아올수있으며 명칭은 apollo라고 되어있다.
+
+- Ant-design
+> * React ui Framework이며 design할 때 도와준다.
 
 
 ### CRA
