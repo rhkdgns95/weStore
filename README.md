@@ -26,6 +26,8 @@
 4. yarn add isomorphic fetch
 : backend에서 fetch하는 방식을 사용하기위해서 설치함.
 5. yarn add apollo-boost graphql react-apollo next-with-apollo
+6. yarn add antd 
+: 버전에서 버그가있어서 yarn add antd@3.8.1로 다운받기.
 
 ## Rule
 > 기본적으로 root디렉터리 아래에는 pages디렉터리가 필요하다.
@@ -129,8 +131,8 @@
 > * 그리고 _app.js에서 클래스를 withApollo(MyApp);으로 감싸면 HOC방식이 완성된다. => 이렇게 withApollo로 MyApp를 decorate하면 MyApp의 props에서는 client를 받아올수있으며 명칭은 apollo라고 되어있다.
 
 - Ant-design
+> * 우리 앱에서는 3.8.1 버전을 사용하며, 헤더에 넣어주도록 한다.
 > * React ui Framework이며 design할 때 도와준다.
-
 
 ### CRA
 > 기본적인 CRA를 사용하게되면 우리는 기본적으로 react app을 생성한다. (이것은 우리가 아무것도 하지 않아도 된다는것을 의미한다.)

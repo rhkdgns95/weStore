@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { DatePicker } from "antd";
 
 export default () => (
     <div>
@@ -6,7 +7,8 @@ export default () => (
             <title>Index</title>
         </Head>
         <h1>
-            hello!
+            index
+            <DatePicker onChange={() => {}}/>
         </h1>
     </div>
 );
