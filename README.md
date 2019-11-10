@@ -17,6 +17,8 @@
 ### Todo - eCommerce
 - [x] Cleaning Up and Planning.
 - [x] Installing Apollo in NextJS.
+- [x] Installing Ant Design.
+- [x] Component Recap.
 
 ## Install
 1. yarn add react react-dom next

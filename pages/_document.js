@@ -23,6 +23,15 @@ export default class MyDocument extends Document {
                 <Head>
                     <meta name={"author"} content={"KKH"}/>
                     <link href="//cdnjs.cloudflare.com/ajax/libs/antd/3.8.1/antd.min.css" rel="stylesheet"/>
+                    <style>{`
+                        html, body {
+                            margin: 0;
+                            padding: 0;
+                        }
+                        body {
+                            background-color: #EFF2F5;
+                        }
+                    `}</style>
                 </Head>
                 <body>
                     <Main />

@@ -1,7 +1,10 @@
+import { Layout } from "antd";
 import App from "next/app";
 import React from "react";
 import withApollo from "../lib/withApollo";
 import { ApolloProvider } from "react-apollo";
+
+const { Footer } = Layout;
 
 class MyApp extends App {
     /**
@@ -24,27 +27,14 @@ class MyApp extends App {
         return (
             <ApolloProvider client={apollo}>
                 <div>
-                    <Component { ...pageProps }/>
-                    <style jsx global>
-                    {`
-                        html, body {
-                            margin: 0;
-                            padding: 0;
-                        }
-                    `}
-                    </style>
+                    <Layout>
+                        <Component { ...pageProps }/>
+                        <Footer>This is important</Footer>
+                    </Layout>
+                    
                 </div>
             </ApolloProvider>
         )
-        /**
-         *  Container Deprecated!
-         * 
-         */
-        // return (
-        //     <Container>
-        //         <Component />
-        //     </Container>
-        // ) 
     }
 };
 
