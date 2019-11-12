@@ -25,6 +25,7 @@
 - [x] Rendering Products on Index.
 - [x] Search Screen part 1.
 - [x] Search Screen part 2.
+- [x] Graphql Fragment + Product Page part 1.
 
 ## Install
 1. yarn add react react-dom next
@@ -224,3 +225,47 @@ myProducts: products {
 > 이것을 언제 사용하는가? => 웹사이트가 있는데, 유저는 아무런 컨텐츠를 만들지 않고 컨텐츠를 받기만 하는 예를들면, blog 같은것을 만들때 사용됨. 
 > 하지만 양방향으로 communication이 있고, 사용자가 인증을 해야하며, 그럴때는 좋은선택이 아니다. => 인증데이터를 생성할수 없으므로 좋지않다.
 > 단순히 Conetent Management System 이다.
+ 
+
+## Graphql의 OR 역할
+ > Graphql에서 다음과 같이 조건 쿼리를 날릴수있다.
+ > > gql의 where조건 예시
+const XXX  = gql`
+    query {
+        products(where: { id: 1 }) {
+            id
+            name
+        }
+    } 
+ `;
+ > 하지만 여러개의 where조건 즉 OR을 사용할때는 다음과 같다.
+ > > gql의 Or조건 예시 (id가 1 또는 name이 KKH인 상품검색)
+const XXX = gql`
+    {
+        products(where: {
+            OR: [
+                { id: 1 },
+                { name: "KKH" }
+            ]
+        })
+    }
+`;
+
+## Fragment ~ on
+> 만약 gql에서 검색한 쿼리의 필드를 계속해서 적는다면 불편할것이다 다음을살펴보자.
+> > Fragment사용의 예시.
+const FRAGMENT_PRODUCT = gql`
+    fragment ProductItems on Product {
+        id
+        name
+    }
+`;
+const XXXX = gql`
+    {
+        products {
+            ...ProductItems
+        }
+    }
+    ${ FRAGMENT_PRODUCT }
+`;
+> 주의점으로 on뒤의 Product는 graphql에 정의된 스키마 이름 그대로를 가져오도록 한다.
