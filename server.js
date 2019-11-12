@@ -21,7 +21,7 @@ app
 
     server.get("/product/:id", (req, res) => {
         const actualPath = "/product";
-        const queryParams = { id: req.params.id};
+        const queryParams = { id: req.params.id };
         app.render(req, res, actualPath, queryParams);
     });
 

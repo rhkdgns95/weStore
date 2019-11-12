@@ -29,7 +29,7 @@ class MyApp extends App {
                 <div>
                     <Layout>
                         <Component { ...pageProps }/>
-                        <Footer>This is important</Footer>
+                        {/* <Footer className={"foot"}>This is important</Footer> */}
                     </Layout>
                     
                 </div>

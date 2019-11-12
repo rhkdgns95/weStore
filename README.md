@@ -26,6 +26,7 @@
 - [x] Search Screen part 1.
 - [x] Search Screen part 2.
 - [x] Graphql Fragment + Product Page part 1.
+- [x] Product Page part 2.
 
 ## Install
 1. yarn add react react-dom next
@@ -150,6 +151,13 @@ myProducts: products {
     name
 }
 
+- withRouter
+> NextJS에서 관리하는 라우팅 모듈이다. HOC를 사용할때 유용하다.
+> getInitialProps를 사용할 수 있다.
+> withRouter로 컨테이너로 decorate하는것이아니라, 바로 return { id: XX }같이 리턴해주면 withRouter를 사용하는 컴포넌트에서는 props.id로 받을수있다.
+> 또한, 그 이외에 새로운 객체에 추가되는 값들을 받는다.
+> 또한 getInitialProps를 안에서 hooks를 사용할 수 없다.
+
 ### CRA
 > 기본적인 CRA를 사용하게되면 우리는 기본적으로 react app을 생성한다. (이것은 우리가 아무것도 하지 않아도 된다는것을 의미한다.)
 > react app은 웹팩을 다시 로드하지 않고 구성하고 Javascript를 이해하고 최신버전의 것도 이해한다.
@@ -269,3 +277,8 @@ const XXXX = gql`
     ${ FRAGMENT_PRODUCT }
 `;
 > 주의점으로 on뒤의 Product는 graphql에 정의된 스키마 이름 그대로를 가져오도록 한다.
+
+## Fragment ~ on - 2
+> Fragment를 사용함으로써 공통적인 필드를 반환하도록했다. 하지만 문제가있다. 확장 버전의 필드가 필요할경우는 어떻게할것인가? 예를들어 아이템의 Details로 기존 + 추가된 필드를 반환하도록 하려면 추가해야 한다면?
+> > 기존 Fragment Item을 확장하는 방법
+
