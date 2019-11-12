@@ -1,6 +1,7 @@
 # weStore
 > eCommerce PWA Built with NextJS and GraphCMS 
-> 참고 https://github.com/zeit/next.js#custom-app
+> 참고: https://github.com/zeit/next.js#custom-app
+> graphql-tag 참고: https://vomvoru.github.io/blog/query-of-GraphQL/
 
 ## Todo
 - [x] Creating a NextJS App.
@@ -23,7 +24,7 @@
 - [x] Index Queries - useHooks.
 - [x] Rendering Products on Index.
 - [x] Search Screen part 1.
-
+- [x] Search Screen part 2.
 
 ## Install
 1. yarn add react react-dom next
@@ -207,6 +208,13 @@ myProducts: products {
 
 ### react.js의 state
 > Javascript 측에 있다. 그러나 우리가 보기에는 html안에서 react.js코드로 보인다. => 아주 쿨한것 (SEO 최적화!)
+
+### Git push 취소
+> local내용을 remote에 강제로 쓰는방법
+> > 1. git reset HEAD^ // 가장 최근의 commit을 취소하고 워킫 디렉터리를 되돌린다.
+> > 2. git reset [ coomit id ] // 단순히 이전push를 취소 할 경우 생략.
+> > 3. git commit -m "XXXX" // 되돌려진 상태에서 다시 commit실행
+> > 4. git push origin [branch name] -f // 원격 저장소에 강제 push
 
 
 ## GraphCMS

@@ -2,11 +2,13 @@ import Head from "next/head";
 import Header from "../../components/Header";
 import Button from "../../components/Button";
 import { Layout, Input } from "antd";
+import ProductCard from "../../components/ProductCard";
 
 const { Content } = Layout;
 
 export default ({
-  searchTerm
+  searchTerm,
+  products: { data }
 }) => (
   <>
     <Head>
@@ -22,8 +24,30 @@ export default ({
     <Content style={{ padding: "0 50px" }}>
       <Input
         placeholder={"Search by name"}
-        {...searchTerm}
+        { ...searchTerm }
       />
+      <div style={{
+        display: "grid",
+        gridGap: "10px",
+        gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+        width: "100%",
+        margin: "50px 0"
+      }}>
+        {
+            data &&
+            data.products &&
+            data.products.map(product => 
+              <ProductCard 
+                key={ product.id }
+                id={ product.id }
+                name={ product.name }
+                subtitle={ product.detail }
+                photoUrl={ product.photo.url }
+                price={ product.price }
+              />
+            )
+        }
+      </div>
     </Content>
   </>
 );
