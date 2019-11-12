@@ -27,7 +27,7 @@
 - [x] Search Screen part 2.
 - [x] Graphql Fragment + Product Page part 1.
 - [x] Product Page part 2.
-
+- [x] Local State like a Boss part 1.
 ## Install
 1. yarn add react react-dom next
 2. yarn add express
@@ -282,3 +282,8 @@ const XXXX = gql`
 > Fragment를 사용함으로써 공통적인 필드를 반환하도록했다. 하지만 문제가있다. 확장 버전의 필드가 필요할경우는 어떻게할것인가? 예를들어 아이템의 Details로 기존 + 추가된 필드를 반환하도록 하려면 추가해야 한다면?
 > > 기존 Fragment Item을 확장하는 방법
 
+## readFragment 
+> cache의 데이터를 가져올때 이전에 fragment에 등록한 필드를 가져올수있다.
+> > fargment예시
+const fragment = gql` ${ FRAGMENT_PRODUCT } `;
+const product = cache.readFragment({ fragment, id: XXXXX });

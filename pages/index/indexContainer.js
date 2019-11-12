@@ -4,7 +4,6 @@ import { INDEX_QUERY } from "./indexQueries";
 
 const getQuery = () => {
     const { data } = useQuery(INDEX_QUERY);
-    console.log("DATA: ", data);
     return {
         data 
     };

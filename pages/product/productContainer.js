@@ -1,29 +1,34 @@
 import { withRouter } from "next/router";
 import ProductPresenter from "./productPresenter";
-import { useQuery } from "react-apollo";
-import { SEARCH_PRODUCT } from "./productQueries";
+import { useQuery, useMutation } from "react-apollo";
+import { SEARCH_PRODUCT, TOGGLE_CART } from "./productQueries";
 
 const useFetchQuery = (query, id) => {
-    let data; 
-    try {
-        const { data: queryData } = useQuery(query, {
-            variables: {
-                id: id ? id : 0
-            },
-            skip: id ? false : true
-        });
-        data = queryData;
-    } catch(error) {
-        console.log("ERROR: ", error.message);
-    }
+    const { data } = useQuery(query, {
+        variables: {
+            id: id ? id : 0
+        },
+        skip: id ? false : true
+    });
     
     return data;
 }
-const useFetch = (id) => {
-    const product = useFetchQuery(SEARCH_PRODUCT, id);
-    return product;
+const useFetchMutation = (query, id) => {
+    const [ toggleCart ] = useMutation(query, {
+        variables: {
+            id
+        }
+    });
+    return toggleCart;
 }
-
+const useFetch = (id) => {
+    const queryProduct = useFetchQuery(SEARCH_PRODUCT, id);
+    const toggleCart = useFetchMutation(TOGGLE_CART, id);
+    return {
+        queryProduct,
+        toggleCart
+    };
+}
 const ProductContainer = ({ id }) => <ProductPresenter { ...useFetch(id) }/>;
 
 ProductContainer.getInitialProps = async(props) => {

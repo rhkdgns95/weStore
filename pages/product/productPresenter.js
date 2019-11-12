@@ -3,14 +3,17 @@ import { Button as AntButton } from "antd";
 import Header from "../../components/Header";
 import Button from "../../components/Button";
 
-export default (data) => (
+export default ({
+    queryProduct,
+    toggleCart
+}) => (
     <>
         {
-            data &&
-            data.product && (
+            queryProduct &&
+            queryProduct.product && (
             <>
                 <Head>
-                    <title>{ data.product.name } | weStore</title>
+                    <title>{ queryProduct.product.name } | weStore</title>
                 </Head>
                 <Header 
                     centerColumn={<h4>Product</h4>}
@@ -18,13 +21,13 @@ export default (data) => (
                     leftColumn={ <Button href="/" text="Home" as={"/"}/> }
                 />
                 <div className={"product"}>
-                    <img src={ data.product.photo.url } />
+                    <img src={ queryProduct.product.photo.url } />
                     <div>
-                        <h2>{ data.product.name }</h2>
-                        <h3>{ data.product.detail }</h3>
-                        <h4>{ data.product.description }</h4>
-                        <AntButton type={"primary"}>
-                            Add to cart( ${data.product.price} )
+                        <h2>{ queryProduct.product.name }</h2>
+                        <h3>{ queryProduct.product.detail }</h3>
+                        <h4>{ queryProduct.product.description }</h4>
+                        <AntButton type={"primary"} onClick={toggleCart}>
+                            Add to cart( ${queryProduct.product.price} )
                         </AntButton>
                     </div>
                     <style jsx>
