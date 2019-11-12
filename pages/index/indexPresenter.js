@@ -50,19 +50,49 @@ export default ({data}) => (
                         width: "100%"
                     }}>
                         {
-                            data && 
-                            data.allProducts &&
-                            data.allProducts.map(product => 
-                                <ProductCard
-                                    key={product.id}
-                                    id={product.id}
-                                    name={product.name}
-                                    subtitle={product.detail}
-                                    price={product.price}
-                                    photoUrl={product.photo.url}
+                            data &&
+                            data.onSale &&
+                            data.onSale.map(product => 
+                                <ProductCard 
+                                    key={ product.id }
+                                    id={ product.id }
+                                    name={ product.name }
+                                    subtitle={ product.detail }
+                                    price={ product.price }
+                                    photoUrl={ product.photo.url }
                                 />
                             )
                         }
+                    </div>
+                </div>
+                <div style={{marginTop: "50px"}}>
+                    {
+                        data &&
+                        data.allProducts &&
+                        data.allProducts.length !== 0 && <h2>All Products</h2>
+                    }
+                    <div style={{
+                        display: "grid",
+                        gridGap: "10px",
+                        gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+                        width: "100%"
+                    }}>
+                    {
+                        data &&
+                        data.allProducts &&
+                        data.allProducts.map(product => 
+                            <ProductCard 
+                                key={ product.id }
+                                id={ product.id }
+                                name={ product.name }
+                                subtitle={ product.detail }
+                                photoUrl={ product.photo.url }
+                                price={ product.price }
+                            />
+
+                            
+                        )
+                    }
                     </div>
                 </div>
             </Content>

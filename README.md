@@ -22,6 +22,8 @@
 - [x] Component Recap.
 - [x] Index Queries - useHooks.
 - [x] Rendering Products on Index.
+- [x] Search Screen part 1.
+
 
 ## Install
 1. yarn add react react-dom next

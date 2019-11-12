@@ -2,7 +2,7 @@ import { Card, Icon } from "antd";
 import Link from "next/link";
 const { Meta } = Card;
 
-export default ({ id, name, subtitle, photoUrl }) => (
+export default ({ id, name, subtitle, photoUrl, price }) => (
     <div style={{ marginBottom: "25px" }}>
         <Card
             hoverable
