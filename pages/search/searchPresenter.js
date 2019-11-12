@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Header from "../../components/Header";
+import CartButton from "../../components/CartButton";
 import Button from "../../components/Button";
 import { Layout, Input } from "antd";
 import ProductCard from "../../components/ProductCard";
-
 const { Content } = Layout;
 
 export default ({
@@ -18,7 +18,7 @@ export default ({
       centerColumn={
         <h4>{searchTerm.value === "" ? "Search" : `Searching by ${searchTerm.value}`}</h4>
       }
-      rightColumn={<Button href="/cart" text="Cart" />}
+      rightColumn={<CartButton href="/cart" text="Cart" />}
       leftColumn={<Button href="/" text="Home" />}
     />
     <Content style={{ padding: "0 50px" }}>

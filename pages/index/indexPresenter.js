@@ -1,8 +1,9 @@
 import { Layout } from "antd";
 import Head from "next/head";
 import Header from "../../components/Header";
-import Button from "../../components/Button";
 import ProductCard from "../../components/ProductCard";
+import Button from "../../components/Button";
+import CartButton from "../../components/CartButton";
 
 const { Content } = Layout;
 
@@ -12,7 +13,7 @@ export default ({data}) => (
             <title>Home | weStore</title>
             <Header
                 centerColumn={<h4>weStore</h4>}
-                rightColunm={ <Button href={"/cart"} text="Cart"/> }
+                rightColunm={ <CartButton href={"/cart"} text="Cart"/> }
                 leftColumn={ <Button href={"/search"} text={"Search"}/> }
             />
             <Content style={{ padding: "0 50px" }}>

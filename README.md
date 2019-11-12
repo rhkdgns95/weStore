@@ -28,6 +28,8 @@
 - [x] Graphql Fragment + Product Page part 1.
 - [x] Product Page part 2.
 - [x] Local State like a Boss part 1.
+- [x] Local State like a Boss part 2.
+
 ## Install
 1. yarn add react react-dom next
 2. yarn add express

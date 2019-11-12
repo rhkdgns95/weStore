@@ -12,7 +12,27 @@ export const resolvers = {
                 ${ FRAGMENT_PRODUCT }
             `;
             const product = cache.readFragment({ fragment, id })
+            const cartQuery = gql`
+                {
+                    cart @client {
+                        id
+                    }
+                }
+            `;
+            const { cart } = cache.readQuery({
+                query: cartQuery
+            });
+
             console.log(product);
+            cache.writeData({
+                data: {
+                    cart: [
+                        ...cart,
+                        product
+                    ]
+                }
+            });
+            return null;
         }
     }
 }
