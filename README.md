@@ -29,6 +29,8 @@
 - [x] Product Page part 2.
 - [x] Local State like a Boss part 1.
 - [x] Local State like a Boss part 2.
+- [x] Local State like a Boss part 3.
+- [x] Local State like a Boss part 4.
 
 ## Install
 1. yarn add react react-dom next
@@ -42,6 +44,7 @@
 : 버전에서 버그가있어서 yarn add antd@3.8.1로 다운받기.
 7. yarn add react-apollo-hooks
 : hooks 설치
+8. yarn add apollo-client apollo-cache-inmemory apollo-link-http
 
 ## Rule
 > 기본적으로 root디렉터리 아래에는 pages디렉터리가 필요하다.
@@ -291,3 +294,32 @@ const XXXX = gql`
 > > fargment예시
 const fragment = gql` ${ FRAGMENT_PRODUCT } `;
 const product = cache.readFragment({ fragment, id: XXXXX });
+
+## query 필드에 로컬의 새로운 함수추가
+> 필드에 리턴받는데, 함수를 추가호고싶다면, 로컬로 사용하도록한다.
+> 1. resolvers에 Query와 Mutation이 아닌 해당하는 쿼리 이름으로 지정하고 함수를 쓴다.
+> 2. Query에 필드를 추가된 함수의 이름을 작성하고 @client로 사용한다
+> 3. API가 아닌 로컬의 필드에 추거된 함수를 사용할 수 있다.
+ex)  resolvers.js에 Product에 해당하는 함수추가.
+export const resolvers = {
+    Query: {...},
+    Mutation: {...},
+    Product: {
+        onData: () => false
+    }
+}
+// queries.js
+export const XXX = gql` allProducts() { ..., onData @client  }`;
+
+## cache.writeFragment
+> cache.writeFragment로 기존에 readFragment에서 해당 fragment와 id값으로 fragment불러온 값을 변환할 수 있도록 도와준다. (주의! __typenme값을 알도록 한다.)
+> id와, 기존에 존재하는 데이터들, 변할 값들만 있으면된다 다음예시를 살펴보자.
+> cache.writeFragment({
+    id: XXXX,
+    fragment: FRAGMENT_PRODUCT,
+    data: {
+        __typename: "Product",
+        ...product,
+        onCart
+    }
+})

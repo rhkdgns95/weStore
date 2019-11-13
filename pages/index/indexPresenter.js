@@ -7,7 +7,7 @@ import CartButton from "../../components/CartButton";
 
 const { Content } = Layout;
 
-export default ({data}) => (
+export default ({ dataQuery }) => (
     <>
         <Head>
             <title>Home | weStore</title>
@@ -26,9 +26,9 @@ export default ({data}) => (
                     }}
                 >
                     {
-                        data &&
-                        data.categories &&
-                        data.categories.map(category => 
+                        dataQuery &&
+                        dataQuery.categories &&
+                        dataQuery.categories.map(category => 
                             <Button 
                                 key={category.id}
                                 href={`/category?name=${category.name}`}
@@ -40,9 +40,9 @@ export default ({data}) => (
                 </div>
                 <div style={{marginTop: "50px"}}>
                     {
-                        data &&
-                        data.onSale &&
-                        data.onSale.length !== 0 && <h2>On Sale</h2>
+                        dataQuery &&
+                        dataQuery.onSale &&
+                        dataQuery.onSale.length !== 0 && <h2>On Sale</h2>
                     }
                     <div style={{
                         display: "grid",
@@ -51,9 +51,9 @@ export default ({data}) => (
                         width: "100%"
                     }}>
                         {
-                            data &&
-                            data.onSale &&
-                            data.onSale.map(product => 
+                            dataQuery &&
+                            dataQuery.onSale &&
+                            dataQuery.onSale.map(product => 
                                 <ProductCard 
                                     key={ product.id }
                                     id={ product.id }
@@ -68,9 +68,9 @@ export default ({data}) => (
                 </div>
                 <div style={{marginTop: "50px"}}>
                     {
-                        data &&
-                        data.allProducts &&
-                        data.allProducts.length !== 0 && <h2>All Products</h2>
+                        dataQuery &&
+                        dataQuery.allProducts &&
+                        dataQuery.allProducts.length !== 0 && <h2>All Products</h2>
                     }
                     <div style={{
                         display: "grid",
@@ -79,9 +79,9 @@ export default ({data}) => (
                         width: "100%"
                     }}>
                     {
-                        data &&
-                        data.allProducts &&
-                        data.allProducts.map(product => 
+                        dataQuery &&
+                        dataQuery.allProducts &&
+                        dataQuery.allProducts.map(product => 
                             <ProductCard 
                                 key={ product.id }
                                 id={ product.id }

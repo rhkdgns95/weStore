@@ -3,7 +3,7 @@ import { FRAGMENT_PRODUCT } from "../fragment";
 
 export const INDEX_QUERY = gql`
     {
-        categories{
+        categories {
             id
             name
         }

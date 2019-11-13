@@ -28,7 +28,7 @@ export default ({
                         <h3>{ queryProduct.product.detail }</h3>
                         <h4>{ queryProduct.product.description }</h4>
                         <AntButton type={"primary"} onClick={toggleCart}>
-                            Add to cart( ${queryProduct.product.price} )
+                            { queryProduct.product.onCart ? "Remove from cart" : "Add to cart" }
                         </AntButton>
                     </div>
                     <style jsx>

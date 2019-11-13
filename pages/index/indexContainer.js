@@ -3,15 +3,12 @@ import IndexPresenter from "./indexPresenter";
 import { INDEX_QUERY } from "./indexQueries";
 
 const getQuery = () => {
-    const { data } = useQuery(INDEX_QUERY);
+    const { data: dataQuery } = useQuery(INDEX_QUERY);
     
     return {
-        data 
+        dataQuery 
     };
 }
-export default () => {
-    const value = getQuery();
-    console.log(value);
-    return <div><IndexPresenter { ...getQuery() }/></div>
-}
+const indexContainer = () => <IndexPresenter { ...getQuery() }/>
+export default indexContainer;
 // export default () => <IndexPresenter { ...getQuery() }/>;
