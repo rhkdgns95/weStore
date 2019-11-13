@@ -36,10 +36,9 @@ export default class MyDocument extends Document {
                     </style>
                 </Head>
                 <body>
-                    <Main />
-                    <NextScript />
+                    <div id="root"><Main /><NextScript /></div>
                 </body>
             </html>
-        )
+        );
     }
 } 

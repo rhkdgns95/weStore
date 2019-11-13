@@ -12,8 +12,9 @@ const GET_CART_CNT = gql`
 
 export default () => {
     const { data } = useQuery(GET_CART_CNT);
-    return <Button 
+    // return <div>hi</div>
+    return <div><Button 
         href={"/cart"} 
-        text={data.cart.length === 0 ? "Cart" : `Cart ( ${data.cart.length} )`}
-    />;
+        text={data && data.cart && data.cart.length === 0 ? "Cart" : `Cart ( ${data.cart.length} )`}
+    /></div>;
 };

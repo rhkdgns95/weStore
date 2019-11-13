@@ -40,6 +40,6 @@ app
         console.log("> Ready on http://localhost:3000");
     })
 }).catch(ex => {
-    console.log(ex.stack);
+    console.error(ex.stack);
     process.exit(1);
 });

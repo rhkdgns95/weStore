@@ -18,8 +18,8 @@ export default ({
                 </Head>
                 <Header 
                     centerColumn={<h4>Product</h4>}
-                    rightColunm={ <CartButton href="/cart" text="Cart" as={"/"}/> }
-                    leftColumn={ <Button href="/" text="Home" as={"/"}/> }
+                    rightColunm={ <CartButton /> }
+                    leftColumn={ <Button href="/" hrefAs={"/"} text="Home"/> }
                 />
                 <div className={"product"}>
                     <img src={ queryProduct.product.photo.url } />

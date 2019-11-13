@@ -40,6 +40,8 @@
 5. yarn add apollo-boost graphql react-apollo next-with-apollo
 6. yarn add antd 
 : 버전에서 버그가있어서 yarn add antd@3.8.1로 다운받기.
+7. yarn add react-apollo-hooks
+: hooks 설치
 
 ## Rule
 > 기본적으로 root디렉터리 아래에는 pages디렉터리가 필요하다.

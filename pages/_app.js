@@ -3,6 +3,7 @@ import App from "next/app";
 import React from "react";
 import withApollo from "../lib/withApollo";
 import { ApolloProvider } from "react-apollo";
+import { ApolloProvider as ApolloHooksProvider } from "react-apollo-hooks";
 
 const { Footer } = Layout;
 
@@ -24,15 +25,15 @@ class MyApp extends App {
 
     render() {
         const { Component, pageProps, apollo } = this.props;
+        console.log(apollo);
         return (
             <ApolloProvider client={apollo}>
-                <div>
+                <ApolloHooksProvider client={apollo}>
                     <Layout>
                         <Component { ...pageProps }/>
                         {/* <Footer className={"foot"}>This is important</Footer> */}
                     </Layout>
-                    
-                </div>
+                </ApolloHooksProvider>
             </ApolloProvider>
         )
     }
