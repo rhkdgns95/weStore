@@ -23,6 +23,7 @@ export default class MyDocument extends Document {
                 <Head>
                     <meta name={"author"} content={"weStore"}/>
                     <link href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.8.1/antd.min.css" rel="stylesheet"/>
+                    <link rel="manifest" href="/manifest.json"/>
                     <style>
                     {`
                         html, body {
@@ -34,7 +35,7 @@ export default class MyDocument extends Document {
                         }
                     `}
                     </style>
-                    <meta name="theme-color" conetnt="black" />
+                    <meta name="theme-color" content="black" />
                     <meta name="viewport" content="width=device-width, initial-scale=1"/>
                     <meta name="description" content="weStore, buy all your swag"/>
                 </Head>
