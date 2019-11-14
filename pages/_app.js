@@ -23,6 +23,21 @@ class MyApp extends App {
         return { pageProps };
     }
 
+    /**
+     *  componentDidMount()
+     * 
+     *  window(browser)에 service-worker가 존재하는지 확인하고
+     *  설치한다.
+     */
+    componentDidMount() {
+        if("serviceWorker" in navigator) {
+            // file이 아닌 URL을 등록한다.
+            navigator.serviceWorker
+            .register("/sw.js")
+            .then(result => console.log("SW Registered: ", result))
+            .catch(err => console.log("Can`t register SW: ", err)); 
+        }
+    }
     render() {
         const { Component, pageProps, apollo } = this.props;
         return (

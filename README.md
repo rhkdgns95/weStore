@@ -35,7 +35,8 @@
 ### Todo - PWA
 - [x] Price Calculation, Auditing with Light House part 1.
 - [x] Auditing with Light House part 2.
-- [] Auditing with Light House part 3.
+- [x] Auditing with Light House part 3.
+- [x] Service Workers part 1.
 
 ## Install
 1. yarn add react react-dom next
@@ -169,6 +170,26 @@ myProducts: products {
 > withRouter로 컨테이너로 decorate하는것이아니라, 바로 return { id: XX }같이 리턴해주면 withRouter를 사용하는 컴포넌트에서는 props.id로 받을수있다.
 > 또한, 그 이외에 새로운 객체에 추가되는 값들을 받는다.
 > 또한 getInitialProps를 안에서 hooks를 사용할 수 없다.
+
+- serviceWorker란?
+> 유저가 우리 website를 벗어나도 동작하도록 도와주는 파일이다.
+> 웹사이트가 작동중이지 않아도 실행되는 자바스크립트 파일이다.
+> 쉽게말해, 웹사이트가 꺼져도 동작하도록 해주는 js파일이다. -> 웹사이트가 꺼져도 notification이 가능하다는 말이다.
+> 웹사이트가 아닌 navigator에 머물러있다.
+> 우리의 웹에서 알아볼것은 2가지정도이다.
+> > * 오프라인 캐싱
+> > * 푸쉬 알림
+> 사용법
+> 1. service-worker를 라우팅에 등록해준다. (웹사이트에서 접근가능하도록.)
+> > * app.serveStatic(req, res, resolve("./public/service-worker.js"));
+> 주의점
+> 1. service-worker.js는 항상 Root에 있어야한다. (/public에 있어서는 안된다.  왜냐? javascript가 우리 도메인을 위해서 등록을 해줄것이기 때문이다. service-worker는 도메인에 기반해있다.)
+
+
+
+- 오프라인 캐싱
+> 해당 웹사이트로 오는 모든 경로들을 캐치해주는 의미이다.
+
 
 ### CRA
 > 기본적인 CRA를 사용하게되면 우리는 기본적으로 react app을 생성한다. (이것은 우리가 아무것도 하지 않아도 된다는것을 의미한다.)
