@@ -34,6 +34,8 @@
 
 ### Todo - PWA
 - [x] Price Calculation, Auditing with Light House part 1.
+- [x] Auditing with Light House part 2.
+- [] Auditing with Light House part 3.
 
 ## Install
 1. yarn add react react-dom next
