@@ -14,7 +14,7 @@ class MyApp extends App {
      *  모든 page들은 app.js에 prop가 된다.
      *  그래서 ctx에는 Component와 router, ctx를 리턴해서 모든 page에서 사용하도록 한다.
      *  
-     */
+     */ 
     static async getInitialProps({ Component, router, ctx }) {
         let pageProps = {}
         if(Component.getInitialProps) {
@@ -26,16 +26,17 @@ class MyApp extends App {
     render() {
         const { Component, pageProps, apollo } = this.props;
         return (
-            <ApolloProvider client={apollo}>
-                <ApolloHooksProvider client={apollo}>
-                    <Layout>
-                        <Component { ...pageProps }/>
-                        {/* <Footer className={"foot"}>This is important</Footer> */}
-                    </Layout>
-                </ApolloHooksProvider>
-            </ApolloProvider>
+            <div>
+                <ApolloProvider client={apollo}>
+                    <ApolloHooksProvider client={apollo}>
+                        <Layout>
+                            <Component { ...pageProps }/>
+                            {/* <Footer className={"foot"}>This is important</Footer> */}
+                        </Layout>
+                    </ApolloHooksProvider>
+                </ApolloProvider>
+            </div>
         )
     }
 };
-
 export default withApollo(MyApp);

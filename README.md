@@ -32,6 +32,9 @@
 - [x] Local State like a Boss part 3.
 - [x] Local State like a Boss part 4.
 
+### Todo - PWA
+- [x] Price Calculation, Auditing with Light House part 1.
+
 ## Install
 1. yarn add react react-dom next
 2. yarn add express

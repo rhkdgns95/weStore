@@ -9,6 +9,5 @@ const getQuery = () => {
         dataQuery 
     };
 }
-const indexContainer = () => <IndexPresenter { ...getQuery() }/>
-export default indexContainer;
+export default () => <IndexPresenter { ...getQuery() }/>
 // export default () => <IndexPresenter { ...getQuery() }/>;

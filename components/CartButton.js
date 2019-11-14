@@ -12,7 +12,6 @@ export const GET_CART_CNT = gql`
 `;
 export default () => {
     const { data } = useQuery(GET_CART_CNT);
-    // return <div>hi</div>
     if(!data) {
         return <div>hi...</div>
     }

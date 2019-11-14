@@ -3,13 +3,13 @@ import Header from "../../components/Header";
 import Button from "../../components/Button";
 import ProductCard from "../../components/ProductCard";
 import { Button as AntButton } from "antd";
+
+const reducerFn = (price, product) => price + product.price;
+
 export default ({cartQuery}) => (
     <>
         <Head>
             <title>Cart | weStore</title>
-            {
-                JSON.stringify(cartQuery)
-            }
         </Head>
         <Header
             centerColumn={ <h4>Cart</h4> }
@@ -42,7 +42,7 @@ export default ({cartQuery}) => (
             }
         </div>
         <div style={{ padding: "0 50px" }}>
-            <h3>Total price: 0</h3>
+            <h3>Total price: { cartQuery && cartQuery.cart && cartQuery.cart.reduce(reducerFn, 0) }</h3>
             <AntButton>Check out</AntButton>
         </div>
     </>
