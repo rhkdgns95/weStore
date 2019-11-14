@@ -184,8 +184,15 @@ myProducts: products {
 > > * app.serveStatic(req, res, resolve("./public/service-worker.js"));
 > 주의점
 > 1. service-worker.js는 항상 Root에 있어야한다. (/public에 있어서는 안된다.  왜냐? javascript가 우리 도메인을 위해서 등록을 해줄것이기 때문이다. service-worker는 도메인에 기반해있다.)
-
-
+> 2. serviceWorker가 있는지 확인하기 위해서 최상단의 App에서 실행시켜주도록 한다. (우리의 웹에서는 _app.js에서 실행한다.)
+> 3. 오프라인과 온라인의 페이지를 보여주는 service-worker를 등록할수도있다.
+> > 오프라인과 온라인을 구별하는 예제
+self.addEventListener("fetch",  event => {
+    console.log("event: ", event);
+    event
+    .respondWith(fetch(event.request)
+    .catch(() => console.log("Sorry we are Offline")));
+})
 
 - 오프라인 캐싱
 > 해당 웹사이트로 오는 모든 경로들을 캐치해주는 의미이다.
