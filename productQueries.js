@@ -1,4 +1,4 @@
-import { FRAGMENT_PRODUCT } from "../fragment";
+import { FRAGMENT_PRODUCT } from "./fragment";
 import { gql } from "apollo-boost";
 
 export const SEARCH_PRODUCT = gql`
@@ -8,7 +8,7 @@ export const SEARCH_PRODUCT = gql`
             description
         }
     }
-    ${ FRAGMENT_PRODUCT }
+    ${FRAGMENT_PRODUCT}
 `;
 
 export const TOGGLE_CART = gql`

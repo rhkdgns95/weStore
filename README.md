@@ -37,7 +37,7 @@
 - [x] Auditing with Light House part 2.
 - [x] Auditing with Light House part 3.
 - [x] Service Workers part 1.
-
+- [x] Service Workers part 2.
 ## Install
 1. yarn add react react-dom next
 2. yarn add express
@@ -314,7 +314,7 @@ const XXXX = gql`
             ...ProductItems
         }
     }
-    ${ FRAGMENT_PRODUCT }
+    ${FRAGMENT_PRODUCT}
 `;
 > 주의점으로 on뒤의 Product는 graphql에 정의된 스키마 이름 그대로를 가져오도록 한다.
 
@@ -325,7 +325,7 @@ const XXXX = gql`
 ## readFragment 
 > cache의 데이터를 가져올때 이전에 fragment에 등록한 필드를 가져올수있다.
 > > fargment예시
-const fragment = gql` ${ FRAGMENT_PRODUCT } `;
+const fragment = gql` ${FRAGMENT_PRODUCT} `;
 const product = cache.readFragment({ fragment, id: XXXXX });
 
 ## query 필드에 로컬의 새로운 함수추가
@@ -356,3 +356,6 @@ export const XXX = gql` allProducts() { ..., onData @client  }`;
         onCart
     }
 })
+
+## now 
+> localhost를 HTTP로 바꿔서 서버로 업로드한다.

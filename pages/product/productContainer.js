@@ -1,8 +1,8 @@
 import { withRouter } from "next/router";
 import ProductPresenter from "./productPresenter";
 import { useQuery, useMutation } from "react-apollo";
-import { SEARCH_PRODUCT, TOGGLE_CART } from "./productQueries";
-import { GET_CART_CNT } from "../../components/CartButton";
+import { SEARCH_PRODUCT, TOGGLE_CART } from "../../productQueries";
+// import { GET_CART_CNT } from "../../components/CartButton";
 
 const useFetchQuery = (query, id) => {
     const { data } = useQuery(query, {

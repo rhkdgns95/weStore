@@ -1,5 +1,5 @@
 import { gql } from "apollo-boost";
-import { FRAGMENT_PRODUCT } from "../fragment";
+import { FRAGMENT_PRODUCT } from "./fragment";
 
 export const SEARCH_PRODUCTS = gql`
     query searchProducts($searchTerm: String!){
@@ -12,5 +12,5 @@ export const SEARCH_PRODUCTS = gql`
              ...ProductItems 
         }
     }
-    ${ FRAGMENT_PRODUCT }
+    ${FRAGMENT_PRODUCT}
 `;

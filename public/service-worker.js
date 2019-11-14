@@ -12,6 +12,7 @@
  *  그리고 self.addEventListener("fetch", (event) => {})에서
  *  오프라인으로 접근할때, 
  *  이전 cache안에 weStore에 저장된 페이지를 open하면됨.
+ *  => 이제 유저의 컴퓨터에서 js파일을 하나 가지게 된셈이다.
  */
 self.addEventListener("install", (event) => {
     const offlinePage = new Request("/");

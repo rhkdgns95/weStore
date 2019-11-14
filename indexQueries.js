@@ -1,5 +1,5 @@
 import { gql } from "apollo-boost";
-import { FRAGMENT_PRODUCT } from "../fragment";
+import { FRAGMENT_PRODUCT } from "./fragment";
 
 export const INDEX_QUERY = gql`
     {
@@ -21,5 +21,5 @@ export const INDEX_QUERY = gql`
         #     }
         # }
     }
-    ${ FRAGMENT_PRODUCT }
+    ${FRAGMENT_PRODUCT}
 `;

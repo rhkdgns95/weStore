@@ -1,6 +1,6 @@
 import SearchPresenter from "./searchPresenter";
 import { useQuery } from "react-apollo";
-import { SEARCH_PRODUCTS } from "./searchQueries";
+import { SEARCH_PRODUCTS } from "../../searchQueries";
 
 const useFetchQuery = (query, value, skip) => {
   const { data } = useQuery(query, {
