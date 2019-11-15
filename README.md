@@ -1,6 +1,8 @@
 # weStore
 > eCommerce PWA Built with NextJS and GraphCMS 
 > 참고: https://github.com/zeit/next.js#custom-app
+> 푸시: https://developers.google.com/web/fundamentals/codelabs/push-notifications
+> 공개키: https://web-push-codelab.glitch.me/
 > graphql-tag 참고: https://vomvoru.github.io/blog/query-of-GraphQL/
 
 ## Todo
@@ -38,6 +40,8 @@
 - [x] Auditing with Light House part 3.
 - [x] Service Workers part 1.
 - [x] Service Workers part 2.
+- [x] Auditing and Conclusuins, Push Notification on a web App.
+
 ## Install
 1. yarn add react react-dom next
 2. yarn add express
@@ -196,6 +200,23 @@ self.addEventListener("fetch",  event => {
 
 - 오프라인 캐싱
 > 해당 웹사이트로 오는 모든 경로들을 캐치해주는 의미이다.
+
+- Push 알림
+> 참고: https://web-push-codelab.glitch.me/
+> Notification.requestPermission(); // 유저로부터 알람요쳥 권한을 받는다.
+> permission === "granted" // 요청이 수락되면,
+> 의무적으로 작성할 subscribe2가지 옵션이있다.
+> userVisibleOnly, applicationServerKey
+> swReg.pushManager.subscribe({
+    userVisibleOnly: true, 
+    applicationServerKey: `PUBLIC_KEY입력.`
+});
+> > applicationServerKey는 공개적으로 준다음, push를 보낼때 비밀키를 사용하도록한다. 그리고 단순히 PUBLIC_KEY만 입력하지말고, 보안적으로 관리되기위해 convertDataURIToBinray로 바꾼다음에 전달하도록한다.
+> 주의!
+> 우리는 푸시알림 권한을 받으면, subscribe을한다.
+> > 여기서 이미 푸시알림권한을 받아져있는 웹사이트라면, 이전 service-worker로 subscribe가 되어있다.
+> > 즉, 매번 service-worker를 만들때마다 subscirbe을 해야한다.
+> > 그렇게 안하면, 맨 처음에 푸시알림 권한을 받을때의 service-worker에만 subscribe이 등록되어있다.
 
 
 ### CRA
@@ -359,3 +380,8 @@ export const XXX = gql` allProducts() { ..., onData @client  }`;
 
 ## now 
 > localhost를 HTTP로 바꿔서 서버로 업로드한다.
+
+
+# TODO 
+- web-push
+> web-push-lib로 web-push 구현하기.

@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
     /**
@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
     }
     render() {
         return (
-            <html lang={"ko"}>
+            <Html lang={"ko"}>
                 <Head>
                     <meta name={"author"} content={"weStore"}/>
                     <link href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.8.1/antd.min.css" rel="stylesheet"/>
@@ -43,7 +43,7 @@ export default class MyDocument extends Document {
                     <Main />
                     <NextScript />
                 </body>
-            </html>
+            </Html>
         );
     }
 } 

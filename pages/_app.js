@@ -4,6 +4,7 @@ import React from "react";
 import withApollo from "../lib/withApollo";
 import { ApolloProvider } from "react-apollo";
 import { ApolloProvider as ApolloHooksProvider } from "react-apollo-hooks";
+import convertDataURIToBinary from "../lib/base64";
 
 const { Footer } = Layout;
 
@@ -30,11 +31,31 @@ class MyApp extends App {
      *  설치한다.
      */
     componentDidMount() {
-        if("serviceWorker" in navigator) {
+        if("serviceWorker" in navigator && "PushManager" in window) {
             // file이 아닌 URL을 등록한다.
             navigator.serviceWorker
             .register("/sw.js")
-            .then(result => console.log("SW Registered: ", result))
+            .then(swReg => {
+                console.log("SW Registered: ", swReg)
+                swReg.pushManager.getSubscription().then(subscription => {
+                    if(subscription === null) {
+                        Notification.requestPermission().then(permission => {
+                            if(permission === "granted") {
+                                swReg.pushManager.subscribe({
+                                    userVisibleOnly: true,
+                                    applicationServerKey: convertDataURIToBinary("BGBkS3I9mBkypX3iJW16hmLrleZn8N7foOgHEGRkiN2cth5KpxOofdZqh1xke3KZ4GCQgeM2dKuAFzeOujcHTO4")
+                                }).then(pushSubscriptionObject => {
+                                    console.log("pushSubscriptionObject: ", pushSubscriptionObject);
+                                })
+                            } else {
+                                console.log("PUSH요청 권한 거부됨")
+                            }
+                        })
+                    } else {
+                        console.log("subscription: ", subscription);
+                    }
+                })
+            })
             .catch(err => console.log("Can`t register SW: ", err)); 
         }
     }
