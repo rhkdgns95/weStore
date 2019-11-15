@@ -41,6 +41,7 @@
 - [x] Service Workers part 1.
 - [x] Service Workers part 2.
 - [x] Auditing and Conclusuins, Push Notification on a web App.
+- [x] Addeed Push Notification image, icon.
 
 ## Install
 1. yarn add react react-dom next

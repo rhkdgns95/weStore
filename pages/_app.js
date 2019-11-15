@@ -45,14 +45,14 @@ class MyApp extends App {
                                     userVisibleOnly: true,
                                     applicationServerKey: convertDataURIToBinary("BGBkS3I9mBkypX3iJW16hmLrleZn8N7foOgHEGRkiN2cth5KpxOofdZqh1xke3KZ4GCQgeM2dKuAFzeOujcHTO4")
                                 }).then(pushSubscriptionObject => {
-                                    console.log("pushSubscriptionObject: ", pushSubscriptionObject);
+                                    console.log(JSON.stringify(pushSubscriptionObject));
                                 })
                             } else {
-                                console.log("PUSH요청 권한 거부됨")
+                                console.log("PUSH요청 권한 거부됨");
                             }
                         })
                     } else {
-                        console.log("subscription: ", subscription);
+                        console.log(JSON.stringify(subscription));
                     }
                 })
             })

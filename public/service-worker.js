@@ -36,9 +36,14 @@ self.addEventListener("fetch",  event => {
 
 self.addEventListener("push", event => {
     const title = "weStore";
+    const icon = "/192x192.png";
     const options = {
-        body: event.data.text()
+        body: event.data.text(),
+        icon,
+        image: icon,
+        badge: icon
     };
+    
     event.waitUntil(self.registration.showNotification(title, options));
     console.log("push: ", event)
 });
