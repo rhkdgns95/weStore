@@ -42,6 +42,8 @@
 - [x] Service Workers part 2.
 - [x] Auditing and Conclusuins, Push Notification on a web App.
 - [x] Addeed Push Notification image, icon.
+- [x] Payment API.
+
 
 ## Install
 1. yarn add react react-dom next
@@ -218,6 +220,12 @@ self.addEventListener("fetch",  event => {
 > > 여기서 이미 푸시알림권한을 받아져있는 웹사이트라면, 이전 service-worker로 subscribe가 되어있다.
 > > 즉, 매번 service-worker를 만들때마다 subscirbe을 해야한다.
 > > 그렇게 안하면, 맨 처음에 푸시알림 권한을 받을때의 service-worker에만 subscribe이 등록되어있다.
+
+- 결제 API
+> 결제에 대한 API를 이용해서 결제 정보들을 물을수있도록 하자.
+> 우리가하는 방식은 신용카드 정보를 요구하지 않아도되고 수수료도 들지않는다. => 단순히 정보를 얻을수있는 수단에 불과하다. 그리고 그 얻은정보를 금융사에 보내는것이다.
+
+
 
 
 ### CRA

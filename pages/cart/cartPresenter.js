@@ -6,7 +6,7 @@ import { Button as AntButton } from "antd";
 
 const reducerFn = (price, product) => price + product.price;
 
-export default ({cartQuery}) => (
+export default ({ cartQuery, onPay }) => (
     <>
         <Head>
             <title>Cart | weStore</title>
@@ -43,7 +43,7 @@ export default ({cartQuery}) => (
         </div>
         <div style={{ padding: "0 50px" }}>
             <h3>Total price: { cartQuery && cartQuery.cart && cartQuery.cart.reduce(reducerFn, 0) }</h3>
-            <AntButton>Check out</AntButton>
+            <AntButton onClick={onPay}>Check out</AntButton>
         </div>
     </>
 )
